@@ -1,0 +1,519 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+#container {
+    position: relative;
+    height: 100%;
+}
+#navbar {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    z-index: 100;
+    background-color: rgba(48, 47, 47, 0.5);
+    width: 100%;
+}
+#middle {
+    display: block;
+    margin-left: 310px; 
+}
+#logo img {
+    margin: 8px 10px; 
+    width: 70px; 
+}
+#navbar ul {
+    display: flex;
+}
+#navbar ul li {
+    list-style: none;
+    font-size: 20px;
+}
+#navbar ul li a {
+    display: block;
+    padding: 0 18px;
+    text-decoration: none;
+    color: white;
+}
+#navbar ul li a:hover {
+    color: rgb(88, 47, 54);
+    color: rgb(147, 7, 88);
+}
+.background-image {
+    background-image: url('img/background.jpg');
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 80%;
+    z-index: -1;
+    opacity: 0.9;
+}
+#home {
+    position: relative;
+    height: 100vh; 
+}
+#home .content {
+    position: absolute;
+    bottom: 0; 
+    width: 100%; 
+    text-align: center;
+    background-color:white; 
+    padding: 20px; 
+    color:black;
+}
+#home h1 {
+    font-size: 30px; 
+}
+button {
+    padding: 4px;
+    width: 80px;
+}
+.right {
+    margin: 10px;
+}
+.login {
+    margin: 10px;
+}
+.login:hover {
+    background-color: rgb(184, 21, 130);
+    color: white;
+}
+.register:hover {
+    background-color: rgb(184, 21, 130);
+    color: white;
+}
+.content h1{
+    padding-bottom: -100px;
+    margin-top: -100px;
+}
+/* POPULAR MODELS */
+#popular-models{
+    margin-top: -40px;
+}
+.photos{
+   display: grid;
+   grid-template-columns: repeat(5, 1fr); 
+   grid-template-rows: repeat(3, 1fr);    
+   gap: 5px; 
+   margin-left: 25px;
+}
+
+#popular-models img{
+    width: 250px;
+    height: 250px;
+    border-radius: 5px;
+    
+}
+.photos p{
+    text-align: center;
+}
+.popmod {
+   position: relative;
+   display: inline-block;
+}
+
+.property {
+position: absolute;
+top: 69%; 
+left: 29%; 
+transform: translate(-50%, -50%); 
+background-color: rgba(0, 0, 0, 0.5);
+color: white;
+padding: 10px;
+opacity: 0; 
+transition: opacity 0.3s; 
+width: 50%;
+height: 50%;
+}
+
+
+.popmod:hover .property  {
+opacity: 1; 
+}
+/* BECOME A MODEL */
+.apply-now {
+position: relative;
+height: 100%;
+width: 100%;
+margin-top: 40px;
+}
+
+.apply-now::before {
+content: "";
+position: absolute;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+background-image: url('img/background1.jpg');
+background-size: cover;
+opacity: 0.5;
+z-index: -1; 
+}
+
+.text {
+position: relative;
+text-align: center;
+padding: 50px 0;
+color:black;
+font-size: 32px;
+padding-top: 150px;
+z-index: 1; 
+}
+
+#apply-now{
+height: 70%;
+
+}
+.text button{
+width:10%;
+padding:9px;
+margin-top: 40px;
+background-color: rgb(106, 42, 53);
+color: white;
+font-size: 15px;
+}
+.text button:hover{
+background-color:white;
+color: rgb(106, 42, 53);
+}
+/* MODEL CATEGORIES */
+
+#models-cate{
+margin-top:30px;
+}
+.models-cate h1{
+text-align: center;
+color:black;
+font-size: 30px;
+}
+
+
+#models-cate img{
+width: 33%;
+
+
+}
+#models-cate h1{
+padding-bottom: 20px;
+
+}
+#models-cate{
+height: 250%;
+margin-top:50px;
+background-color: rgb(114, 78, 84);
+}
+
+
+.female{
+display: block;
+margin-left: 400px;
+margin-top: 60px;
+}
+.fe-mod{
+width: 33%;
+text-align: center;
+padding-bottom: 10px;
+}
+
+.male{
+display: block;
+margin-left: 800px;
+margin-top:-524px;
+width:70%;
+}
+.male-mod{
+width: 33%;
+text-align: center;
+padding-bottom: 10px;
+}
+
+.celebrities{
+display: block;
+margin-left: 400px;
+margin-top: 250px;
+}
+.cele-mod{
+width: 33%;
+text-align: center;
+padding-bottom: 10px;
+}
+
+.kids{
+display: block;
+margin-left: 800px;
+margin-top:-750px;
+width:70%;
+}
+.kids-mod{
+width: 33%;
+text-align: center;
+padding-bottom: 10px;
+}
+#models-cate button{
+width: 50%;
+margin-top: 10px;
+background-color: rgb(106, 42, 53);
+color: white;
+margin-bottom: 10px;
+font-size: 15px;
+padding: 5px;
+}
+#models-cate button:hover{
+color:rgb(106, 42, 53);
+background-color: white;
+}
+#models-cate h3{
+font-size:25px;
+}
+/* our services */
+#our-services{
+
+margin-top: 30px;
+
+}
+#our-services h1{
+text-align: center;
+padding-bottom: 10px;
+}
+
+#our-services button{
+width: 45%;
+padding: 15px;
+margin: 10px;
+text-align: center;
+}
+
+.services {
+
+height: 70vh;
+position: relative;
+
+}
+
+.services h1 {
+text-align: center;
+color: rgb(0, 0, 0);
+margin-bottom: 10px;
+margin-top: 20px;
+font-size: 30px;
+
+}
+.service-type {
+background-image: url('img/background1.jpg');
+background-size: cover;
+top: 0;
+left: 0;
+width: 100%;
+height: 95%;
+z-index: -1;
+}
+.box{
+size: 100px;
+max-width: 700px;
+float: left;
+display: flex;
+flex-direction: column;
+background-color: rgba(0, 0, 0, 0);;
+margin-left: 200px;
+margin-top: 60px;
+}
+.box1{
+size: 100px;
+max-width: 700px;
+float: left;
+display: flex;
+flex-direction: column;
+background-color: rgba(0, 0, 0, 0);;
+margin-left: 300px;
+margin-top: 60px;
+}
+
+.boxbtn{
+display: inline-block;
+padding: 15px 43px;
+background-color:rgb(84, 45, 51);
+color: #fff;
+size: 10px;
+text-decoration: none;
+border-radius: 4px;
+position: relative;
+transition: background-color 0.3s ease;
+margin-left: 80px;
+margin-bottom: -7px;
+margin-top: 35px;
+width: 80%;
+
+} 
+.boxbtn:hover {
+background-color:pink;
+}
+/* about us */
+.about-box{
+height: 500px;
+display: flex;
+margin: 10px;
+
+
+
+}
+.about-left{
+flex-basis: 60%;
+padding-left:100px;
+padding-top: 100px;
+
+}
+.about-right{
+flex-basis:40%;
+padding-left: 40px;
+padding-top: 170px;
+
+}
+.about-right p{
+padding:10px;
+text-align: left;
+}
+#about-us h1{
+text-align: center;
+padding-top: 25px;
+font-size: 30px;
+
+
+
+}
+#about-us{
+margin-top: 15px;
+}
+.about-left p{
+padding: 20px;
+text-align: left;
+}
+.aboutback{
+position: relative;
+height: 80%;
+width: 100%;
+margin-top: 30px;
+}
+
+.aboutback::before {
+content: "";
+position: absolute;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+background-image: url('img/aboutback1.jpg');
+background-size: cover;
+opacity: 0.1;
+z-index: -1; 
+}
+
+.about-box {
+position: relative;
+text-align: center;
+padding: 0px 0;
+color:black;
+font-size: 20px;
+
+z-index: 1;
+}
+/* goggle map */
+
+.map{
+background-image: url('img/googlemap.jpg');
+background-size: cover;
+height: 70vh;
+position: relative;
+}
+.mapbox{
+width: 700px;
+height: 100px;
+position: absolute;
+bottom: 33px;
+left:46%;
+transform: translateX(-40%);
+
+
+}
+.mapbox1{
+display: inline-block;
+width: 130px;
+height: 100px;
+background-color: rgb(91, 54, 60);
+color: white;
+border: 2px solid black;
+margin-left: 0.1px;
+padding: 15px;
+text-align: center;
+
+
+}
+.mapbox1 h3{
+margin-top: 25px;
+
+}
+.mapbox1 h5{
+padding-top: 12px;
+}
+.icon li{
+list-style: none;
+padding: 5px;
+font-size: 25px;
+}
+.icon{
+display: flex;
+padding-left: 46%;
+}
+.footer{
+text-align: center;
+margin-top: 15px;
+
+}
+.copyright{
+display: inline-block;
+background-color: rgb(84, 45, 52);
+color: white;
+}
+#logo1 img{
+margin: -4px 10px;
+width: 5%;
+}
+.right i{
+padding-right: 4px;
+}
+.right a{
+text-decoration: none;
+}
+.mapbox1 i{
+font-size: 27px;
+}
+.about-right i{
+font-size: 23px;
+padding-right: 10px;
+}
+.service-type i{
+padding-right: 10px;
+text-align: left;
+font-size: 20px;
+}
+.load-more button{
+text-align: center;
+width: 10%;
+color: white;
+background-color: rgb(106, 42, 53);
+padding: 5px;
+margin-left: 45%;
+margin-top: 15px;
+font-size: 15px;
+}
+.load-more button:hover{
+color:rgb(106, 42, 53);
+background-color: white;
+}
+
