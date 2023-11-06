@@ -8,7 +8,7 @@
        body{
             margin: 0px;
             padding: 0px;
-            background-image: url('img/background.jpg');
+            /* background-image: url('img/background.jpg'); */
             background-repeat: no-repeat;
             background-attachment: fixed;
             background-size: 100% 100%;    
@@ -73,7 +73,8 @@
 
                 <input  type="radio" name="gender" value="female">female
                 <input  type="radio" name="gender" value="male">male
-                <input  type="radio" name="gender" value="others">others<br><br>
+                <input  type="radio" name="gender" value="others">others
+                <br><br>
             </div>
             
             <input type="number" name="age"  placeholder="select your age"><br><br>
@@ -100,8 +101,14 @@ if (isset($_POST["b1"])) {
     $phone = $_POST['phone'];
     $email = $_POST['email'];
     $password = $_POST['password'];
-    $gender = $_POST['gender'];
     $age = $_POST['age'];
+    if (isset($_POST['gender'])) {
+        $gender = $_POST['gender'];
+    } else {
+        echo "<script>alert('Gender is required.')</script>";
+        exit; 
+    }
+    
 
     
     if ($_FILES['image']['error'] === UPLOAD_ERR_OK) {
