@@ -60,7 +60,7 @@
 </head>
 <body>
     <div class="container">
-    <form  id="form" method="POST">
+    <form  id="form" method="POST" enctype="multipart/form-data">
      
          <h1>registration here</h1>
             <input type="text" name="username" placeholder="enter your username"><br><br>
@@ -68,20 +68,22 @@
             <input type="text" name="email" placeholder="enter your email id"><br><br>
             <input type="password" name="password" id="" placeholder="enter your password"><br><br>
             Select your gender:
-            <br><br>
+            <br>
             <div class="h1">
 
                 <input  type="radio" name="gender" value="female">female
-                <input   type="radio" name="gender" value="female">male
-                <input   type="radio" name="gender" value="female">others<br><br>
+                <input  type="radio" name="gender" value="male">male
+                <input  type="radio" name="gender" value="others">others<br><br>
             </div>
             
-            <input type="number" name="age" placeholder="select your age"><br><br>
+            <input type="number" name="age"  placeholder="select your age"><br><br>
+            select your photo:<br>
+            <input type="file" name="image"><br><br>
             <input type="submit" class="btn"  name="b1" value="submit">
     </form>
     </div>
     
-    <?php
+<?php
 $servername = "localhost";
 $username = "root";
 $password = "";
@@ -94,28 +96,40 @@ if ($conn->connect_error) {
 }
 
 if (isset($_POST["b1"])) {
-    $username = $_POST['username'];
+    $name = $_POST['username'];
     $phone = $_POST['phone'];
     $email = $_POST['email'];
     $password = $_POST['password'];
     $gender = $_POST['gender'];
     $age = $_POST['age'];
 
-    if ($username == "" || $phone == "" || $email == "" || $password == "" || $gender == "" || $age == "") {
-        echo "<script>alert('Sorry, all fields are required')</script>";
-    } else {
-        $sql = "INSERT INTO modelsdata (username, phone, email, password, gender, age) VALUES ('$name', '$phone', '$email', '$password','$gender','$age')";
-
-        if ($conn->query($sql) === TRUE) {
-            echo "<script>alert('Registration successful');</script>";
-            echo "<script>window.location.href='home1.html'</script>";
-        } else {
-            echo "<script>alert('Registration failed');</script>";
-        }
+    
+    if ($_FILES['image']['error'] === UPLOAD_ERR_OK) {
+        $image = $_FILES['image'];
+        $imageName = basename($image['name']);
+        
+        $uploadPath = 'uploads/' . $imageName;
+        
+        if (move_uploaded_file($image['tmp_name'], $uploadPath)) {
+            
+            $sql = "INSERT INTO modelsdata (username, phone, email, password, gender, age, image) 
+                    VALUES ('$name', '$phone', '$email', '$password','$gender','$age', '$imageName')";
+     } else {
+       echo "<script>alert('Image upload failed.')</script>";
+     }
     }
+    if (empty($name) || empty($phone) || empty($email) || empty($password) || empty($gender) || empty($age) || empty($image)) {
+        echo "<script>alert('Sorry, all fields are required.')</script>";
+    } else {
+            if ($conn->query($sql) === TRUE) {
+                echo "<script>alert('Registration successful');</script>";
+                echo "<script>window.location.href='home1.html'</script>";
+            } else {
+                echo "<script>alert('Registration failed');</script>";
+            }
     
 }
-
+}
 $conn->close();
 ?>
 
