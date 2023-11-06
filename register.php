@@ -8,7 +8,7 @@
        body{
             margin: 0px;
             padding: 0px;
-            /* background-image: url('img/background.jpg'); */
+            background-image: url('img/background.jpg');
             background-repeat: no-repeat;
             background-attachment: fixed;
             background-size: 100% 100%;    
